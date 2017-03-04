@@ -209,8 +209,6 @@ status_t VolumeBase::mount() {
     status_t res = doMount();
     if (res == OK) {
         setState(State::kMounted);
-	} else if (res == -2) {
-        return destroy();
     } else {
         setState(State::kUnmountable);
     }
